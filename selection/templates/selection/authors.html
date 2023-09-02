@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>БИБЛИОТЕКА</title>
+</head>
+<body>
+<h1>ПЕРЕЧЕНЬ АВТОРОВ С УКАЗАНИЕМ ИХ КНИГ </h1>
+
+{% for author in authors_list %}
+
+    <p><b>{{ author }}</b></p>
+        {% for book in author.book_set.all %}
+            <p>{{ book }}</p>
+        {% endfor %}
+
+{% endfor %}
+</body>
+</html>

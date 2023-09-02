@@ -23,6 +23,7 @@ from .swagger_config import swagger_url_patterns
 
 urlpatterns = swagger_url_patterns +[
     path("admin/", admin.site.urls),
+    path("", views.list_book),
     path("api/", include(router.urls)),
     path('api/api-auth', include('rest_framework.urls'))
 ]
