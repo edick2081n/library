@@ -1,5 +1,6 @@
 venv/
 **/migrations/
+!**/migrations/__init__.py
 *.sqlite3
 **/__pycache__/
 .idea/
