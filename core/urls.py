@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 from selection import views
 from .routers import router
 from .swagger_config import swagger_url_patterns
@@ -26,4 +28,4 @@ urlpatterns = swagger_url_patterns +[
     path("", views.list_book),
     path("api/", include(router.urls)),
     path('api/api-auth', include('rest_framework.urls'))
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_URL)
